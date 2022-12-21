@@ -1,1 +1,1 @@
-# Flutter_notes_auth-
+# Notes App with authentication
