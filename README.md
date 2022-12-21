@@ -1,1 +1,0 @@
-# Notes App with authentication
