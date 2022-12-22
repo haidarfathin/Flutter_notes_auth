@@ -95,9 +95,7 @@ class _ViewNoteState extends State<ViewNote> {
                           width: 50,
                           height: 50,
                           child: ElevatedButton(
-                            onPressed: () {
-                              Navigator.of(context).pop(context);
-                            },
+                            onPressed: delete,
                             style: ElevatedButton.styleFrom(
                               padding: const EdgeInsets.only(right: 1),
                               backgroundColor: Colors.red.shade300,
