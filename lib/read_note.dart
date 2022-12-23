@@ -187,8 +187,32 @@ class _ViewNoteState extends State<ViewNote> {
   }
 
   void delete() async {
-    widget.ref.delete();
-    Navigator.pop(context);
+    showDialog(
+      context: context,
+      builder: (BuildContext ctx) {
+        return AlertDialog(
+          title: const Text("Diinformasikan"),
+          content: const Text('Affakah anda yakin menghapus note ini?'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                widget.ref.delete();
+                Navigator.pop(context);
+              },
+              child: const Text("Iyyah"),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('Gak'),
+            )
+          ],
+        );
+      },
+    ).then((value) => {
+          Navigator.pop(context),
+        });
   }
 
   void save() async {

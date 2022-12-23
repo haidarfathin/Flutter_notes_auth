@@ -54,5 +54,10 @@ Future signInWithGoogle(BuildContext context) async {
 }
 
 Future<void> signOut() async {
-  await FirebaseAuth.instance.signOut();
+  if (googleSignIn.currentUser != null) {
+    await googleSignIn.disconnect();
+    await FirebaseAuth.instance.signOut();
+  } else {
+    await FirebaseAuth.instance.signOut();
+  }
 }
